@@ -1,0 +1,25 @@
+\contentsline {section}{\numberline {1}Introduction: What is a Knowledge Graph?}{3}{section.1}%
+\contentsline {section}{\numberline {2}Core Components and Concepts}{3}{section.2}%
+\contentsline {subsection}{\numberline {2.1}Nodes (Entities)}{3}{subsection.2.1}%
+\contentsline {subsection}{\numberline {2.2}Edges (Relationships and Properties)}{3}{subsection.2.2}%
+\contentsline {subsection}{\numberline {2.3}Triples (Subject-Predicate-Object)}{3}{subsection.2.3}%
+\contentsline {subsection}{\numberline {2.4}Schema and Ontology}{4}{subsection.2.4}%
+\contentsline {subsection}{\numberline {2.5}Unique Resource Identifiers (URIs)}{4}{subsection.2.5}%
+\contentsline {subsection}{\numberline {2.6}Visual Example}{4}{subsection.2.6}%
+\contentsline {section}{\numberline {3}Types of Knowledge Graphs}{4}{section.3}%
+\contentsline {subsection}{\numberline {3.1}Scope}{4}{subsection.3.1}%
+\contentsline {subsection}{\numberline {3.2}Accessibility and Source}{5}{subsection.3.2}%
+\contentsline {section}{\numberline {4}Knowledge Graph Creation Lifecycle}{5}{section.4}%
+\contentsline {subsection}{\numberline {4.1}Knowledge Extraction}{5}{subsection.4.1}%
+\contentsline {subsection}{\numberline {4.2}Knowledge Integration and Linking}{5}{subsection.4.2}%
+\contentsline {subsection}{\numberline {4.3}Knowledge Curation and Refinement}{5}{subsection.4.3}%
+\contentsline {subsection}{\numberline {4.4}Knowledge Storage}{6}{subsection.4.4}%
+\contentsline {section}{\numberline {5}Querying Knowledge Graphs}{6}{section.5}%
+\contentsline {subsection}{\numberline {5.1}SPARQL (SPARQL Protocol and RDF Query Language)}{6}{subsection.5.1}%
+\contentsline {subsection}{\numberline {5.2}Other Query Mechanisms}{7}{subsection.5.2}%
+\contentsline {section}{\numberline {6}Applications of Knowledge Graphs}{7}{section.6}%
+\contentsline {section}{\numberline {7}Benefits of Using Knowledge Graphs}{7}{section.7}%
+\contentsline {section}{\numberline {8}Challenges in Knowledge Graph Implementation}{8}{section.8}%
+\contentsline {section}{\numberline {9}Future Directions}{8}{section.9}%
+\contentsline {section}{\numberline {10}Conclusion}{9}{section.10}%
+\contentsline {section}{References}{10}{section*.2}%

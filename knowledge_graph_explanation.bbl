@@ -1,0 +1,218 @@
+% $ biblatex auxiliary file $
+% $ biblatex bbl format version 3.3 $
+% Do not modify the above lines!
+%
+% This is an auxiliary file used by the 'biblatex' package.
+% This file may safely be deleted. It will be recreated by
+% biber as required.
+%
+\begingroup
+\makeatletter
+\@ifundefined{ver@biblatex.sty}
+  {\@latex@error
+     {Missing 'biblatex' package}
+     {The bibliography requires the 'biblatex' package.}
+      \aftergroup\endinput}
+  {}
+\endgroup
+
+
+\refsection{0}
+  \datalist[entry]{nyt/global//global/global/global}
+    \entry{DBpedia}{inproceedings}{}{}
+      \name{author}{6}{}{%
+        {{hash=74de32830575f67e1479f58f47d2111d}{%
+           family={Auer},
+           familyi={A\bibinitperiod},
+           given={Sören},
+           giveni={S\bibinitperiod}}}%
+        {{hash=c0ab52e226557a243a4a5277aec8acdc}{%
+           family={Bizer},
+           familyi={B\bibinitperiod},
+           given={Christian},
+           giveni={C\bibinitperiod}}}%
+        {{hash=bac6a69c5666c5048bbc9cad7c95fe56}{%
+           family={Kobilarov},
+           familyi={K\bibinitperiod},
+           given={Georgi},
+           giveni={G\bibinitperiod}}}%
+        {{hash=045d4294ee6b6936c99d278b857478b4}{%
+           family={Lehmann},
+           familyi={L\bibinitperiod},
+           given={Jens},
+           giveni={J\bibinitperiod}}}%
+        {{hash=ff065518eacac535eec041c322c21896}{%
+           family={Cyganiak},
+           familyi={C\bibinitperiod},
+           given={Richard},
+           giveni={R\bibinitperiod}}}%
+        {{hash=bd823da154886ce8cc0fe286b1cc4028}{%
+           family={Ives},
+           familyi={I\bibinitperiod},
+           given={Zachary\bibnamedelima G.},
+           giveni={Z\bibinitperiod\bibinitdelim G\bibinitperiod}}}%
+      }
+      \strng{namehash}{91ba05e3a8053b5f3aafa47005decbda}
+      \strng{fullhash}{6e9b9dcff8996452d5b4cb6b52163822}
+      \strng{fullhashraw}{6e9b9dcff8996452d5b4cb6b52163822}
+      \strng{bibnamehash}{6e9b9dcff8996452d5b4cb6b52163822}
+      \strng{authorbibnamehash}{6e9b9dcff8996452d5b4cb6b52163822}
+      \strng{authornamehash}{91ba05e3a8053b5f3aafa47005decbda}
+      \strng{authorfullhash}{6e9b9dcff8996452d5b4cb6b52163822}
+      \strng{authorfullhashraw}{6e9b9dcff8996452d5b4cb6b52163822}
+      \field{sortinit}{A}
+      \field{sortinithash}{2f401846e2029bad6b3ecc16d50031e2}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{booktitle}{The Semantic Web, 6th International Semantic Web Conference, 2nd Asian Semantic Web Conference, ISWC 2007 + ASWC 2007, Busan, Korea, November 11-15, 2007}
+      \field{series}{Lecture Notes in Computer Science}
+      \field{title}{{DBpedia}: A Nucleus for a Web of Open Data}
+      \field{volume}{4825}
+      \field{year}{2007}
+      \field{pages}{722\bibrangedash 735}
+      \range{pages}{14}
+      \verb{doi}
+      \verb 10.1007/978-3-540-76298-0_52
+      \endverb
+    \endentry
+    \entry{BernersLee2001}{article}{}{}
+      \name{author}{3}{}{%
+        {{hash=d469e0df304c98f67b55d087ea6187a1}{%
+           family={Berners-Lee},
+           familyi={B\bibinithyphendelim L\bibinitperiod},
+           given={Tim},
+           giveni={T\bibinitperiod}}}%
+        {{hash=b03c1c11511fa3c1c6224a741f227be4}{%
+           family={Hendler},
+           familyi={H\bibinitperiod},
+           given={James},
+           giveni={J\bibinitperiod}}}%
+        {{hash=fb144ce9931b409b1bdccdff7d3a4ecd}{%
+           family={Lassila},
+           familyi={L\bibinitperiod},
+           given={Ora},
+           giveni={O\bibinitperiod}}}%
+      }
+      \strng{namehash}{282db63790560cddab64edb482ae1b3e}
+      \strng{fullhash}{f4ea8e196bdf65a991bf6b05075d7d62}
+      \strng{fullhashraw}{f4ea8e196bdf65a991bf6b05075d7d62}
+      \strng{bibnamehash}{f4ea8e196bdf65a991bf6b05075d7d62}
+      \strng{authorbibnamehash}{f4ea8e196bdf65a991bf6b05075d7d62}
+      \strng{authornamehash}{282db63790560cddab64edb482ae1b3e}
+      \strng{authorfullhash}{f4ea8e196bdf65a991bf6b05075d7d62}
+      \strng{authorfullhashraw}{f4ea8e196bdf65a991bf6b05075d7d62}
+      \field{sortinit}{B}
+      \field{sortinithash}{d7095fff47cda75ca2589920aae98399}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{journaltitle}{Scientific American}
+      \field{month}{5}
+      \field{number}{5}
+      \field{title}{The Semantic Web}
+      \field{volume}{284}
+      \field{year}{2001}
+      \field{pages}{34\bibrangedash 43}
+      \range{pages}{10}
+    \endentry
+    \entry{GoogleKG}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=8b36e9207c24c76e6719268e49201d94}{%
+           family={{Google}},
+           familyi={G\bibinitperiod}}}%
+      }
+      \strng{namehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{fullhash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{fullhashraw}{8b36e9207c24c76e6719268e49201d94}
+      \strng{bibnamehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{authorbibnamehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{authornamehash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{authorfullhash}{8b36e9207c24c76e6719268e49201d94}
+      \strng{authorfullhashraw}{8b36e9207c24c76e6719268e49201d94}
+      \field{sortinit}{G}
+      \field{sortinithash}{32d67eca0634bf53703493fb1090a2e8}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{\url{https://blog.google/products/search/introducing-knowledge-graph-things-not/}}
+      \field{title}{Things, not strings}
+      \field{urlday}{30}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2012}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://blog.google/products/search/introducing-knowledge-graph-things-not/
+      \endverb
+      \verb{url}
+      \verb https://blog.google/products/search/introducing-knowledge-graph-things-not/
+      \endverb
+    \endentry
+    \entry{OWL2Overview}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=cb320ec3867effa6aeda100c390936b2}{%
+           family={{W3C OWL Working Group}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{cb320ec3867effa6aeda100c390936b2}
+      \strng{fullhash}{cb320ec3867effa6aeda100c390936b2}
+      \strng{fullhashraw}{cb320ec3867effa6aeda100c390936b2}
+      \strng{bibnamehash}{cb320ec3867effa6aeda100c390936b2}
+      \strng{authorbibnamehash}{cb320ec3867effa6aeda100c390936b2}
+      \strng{authornamehash}{cb320ec3867effa6aeda100c390936b2}
+      \strng{authorfullhash}{cb320ec3867effa6aeda100c390936b2}
+      \strng{authorfullhashraw}{cb320ec3867effa6aeda100c390936b2}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{W3C Recommendation}
+      \field{month}{12}
+      \field{title}{{OWL 2 Web Ontology Language Document Overview (Second Edition)}}
+      \field{urlday}{30}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2012}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.w3.org/TR/owl2-overview/
+      \endverb
+      \verb{url}
+      \verb https://www.w3.org/TR/owl2-overview/
+      \endverb
+    \endentry
+    \entry{SPARQL11Query}{misc}{}{}
+      \name{author}{1}{}{%
+        {{hash=78e34240153c0c2d130ec4e5d01667b2}{%
+           family={{W3C SPARQL Working Group}},
+           familyi={W\bibinitperiod}}}%
+      }
+      \strng{namehash}{78e34240153c0c2d130ec4e5d01667b2}
+      \strng{fullhash}{78e34240153c0c2d130ec4e5d01667b2}
+      \strng{fullhashraw}{78e34240153c0c2d130ec4e5d01667b2}
+      \strng{bibnamehash}{78e34240153c0c2d130ec4e5d01667b2}
+      \strng{authorbibnamehash}{78e34240153c0c2d130ec4e5d01667b2}
+      \strng{authornamehash}{78e34240153c0c2d130ec4e5d01667b2}
+      \strng{authorfullhash}{78e34240153c0c2d130ec4e5d01667b2}
+      \strng{authorfullhashraw}{78e34240153c0c2d130ec4e5d01667b2}
+      \field{sortinit}{W}
+      \field{sortinithash}{4315d78024d0cea9b57a0c6f0e35ed0d}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{howpublished}{W3C Recommendation}
+      \field{month}{3}
+      \field{title}{{SPARQL 1.1 Query Language}}
+      \field{urlday}{30}
+      \field{urlmonth}{3}
+      \field{urlyear}{2025}
+      \field{year}{2013}
+      \field{urldateera}{ce}
+      \verb{urlraw}
+      \verb https://www.w3.org/TR/sparql11-query/
+      \endverb
+      \verb{url}
+      \verb https://www.w3.org/TR/sparql11-query/
+      \endverb
+    \endentry
+  \enddatalist
+\endrefsection
+\endinput
+

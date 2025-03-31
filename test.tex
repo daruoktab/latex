@@ -1,0 +1,234 @@
+\documentclass[11pt]{article}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Essential Packages for the Checker Document Itself
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\usepackage[utf8]{inputenc} % Input encoding
+\usepackage[T1]{fontenc}    % Font encoding for output
+\usepackage{lmodern}        % Use Latin Modern fonts
+\usepackage[a4paper, margin=2cm]{geometry} % Sensible page margins
+\usepackage{xcolor}         % For colored text reporting
+\usepackage{ifpdf}          % Detect pdfTeX
+\usepackage{ifxetex}        % Detect XeTeX
+\usepackage{ifluatex}       % Detect LuaTeX
+\usepackage{textcomp}       % For symbols like \textbullet
+\usepackage{tocloft}        % Customize ToC appearance (used for layout here)
+\usepackage{hyperref}       % For clickable links (optional, but good practice)
+\usepackage{amssymb}        % For \checkmark symbol used in explanation
+\usepackage{pifont}         % For ZapfDingbats symbols like \ding{193} (lightning)
+
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,
+    urlcolor=cyan,
+    pdftitle={LaTeX Package Availability Checker},
+    pdfauthor={Package Checker Script},
+    pdfsubject={Testing local LaTeX installation},
+    pdfkeywords={LaTeX, TeX, Packages, Check, Availability, Installation},
+    bookmarks=true,
+    bookmarksopen=true,
+}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Custom Macro for Checking Package File Existence using \IfFileExists
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% This macro uses \IfFileExists which *only* checks for existence
+% without inputting the file contents, thus avoiding preamble errors.
+
+\makeatletter % Need internal commands
+\newcommand{\CheckPackageFile}[1]{%
+  \par\noindent\hspace*{1em}\textbullet~\texttt{#1}: % Print package name
+  \IfFileExists{#1.sty}{%
+    % --- File Found ---
+    \textcolor{green!70!black}{\textbf{[File Found]}} % Report found
+    \textcolor{blue!70!black}{\textit{(Exists. Loading success/failure must be checked in \texttt{.log} of actual document compilation.)}} % Clarification
+  }{%
+    % --- File Not Found ---
+    \textcolor{red}{\textbf{[File Not Found]}} % Report not found
+    \textcolor{red}{\bfseries\Large\qquad \ding{193}~Package file \texttt{#1.sty} missing!} % Use \ding symbol and \texttt
+  }%
+  \par % Ensure line break after check
+}
+\makeatother
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Document Start
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\begin{document}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Title and Introduction
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\title{\Huge LaTeX Package Availability Checker\\[1ex] \Large Testing Your Local Installation}
+\author{Generated Test Document}
+\date{\today}
+\maketitle
+
+\begin{abstract}
+This document attempts to check for the existence of \texttt{.sty} files for a wide variety of common and specialized LaTeX packages to help determine if they are installed in your local TeX distribution (like TeX Live or MiKTeX). Check the output below. \textbf{Crucially, this check does NOT guarantee the package will load correctly.} You must attempt to use \texttt{\string\usepackage} for the package in the preamble of your *actual* document and then examine the \textbf{\texttt{.log}} file generated during that compilation for detailed error messages if any packages fail to load due to dependencies, conflicts, or internal errors.
+\end{abstract}
+
+\hrulefill
+\vspace{2ex}
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Compilation Information and Instructions
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+\section*{Compilation Information \& Instructions}
+
+\textbf{Detected Engine:}
+\ifpdf
+  pdfTeX (or a derivative compatible with \texttt{ifpdf})
+\else
+  \ifxetex
+    XeTeX
+  \else
+    \ifluatex
+      LuaTeX
+    \else
+      Unknown or non-PDF mode (e.g., DVI)
+    \fi
+  \fi
+\fi
+\vspace{1ex}
+
+\textbf{How to Compile This Checker:}
+\begin{itemize}
+    \item Use your standard LaTeX compiler (e.g., `pdflatex`, `lualatex`, `xelatex`).
+    \item Compile this file: \texttt{pdflatex package\_checker.tex} (or your preferred engine).
+    \item Because this checker now only checks file existence, `nonstopmode` is less critical for *this specific file*, but still useful when compiling your *actual* documents to find missing packages.
+\end{itemize}
+
+\textbf{How to Interpret Results:}
+\begin{itemize}
+    \item \textcolor{green!70!black}{\textbf{[File Found]}} \textit{(Exists...)}: The package file (\texttt{.sty}) was found by LaTeX in its search path. This means the package is likely installed. However, this DOES NOT guarantee it will load without errors when used in your document's preamble.
+    \item \textcolor{red}{\textbf{[File Not Found]}} \textcolor{red}{\ding{193}~\textit{Package file ... missing!}}: The package file (\texttt{.sty}) could not be located by LaTeX. It needs to be installed using your TeX distribution's package manager.
+    \item \textbf{Check the \texttt{.log} file of your *actual* document!} This cannot be stressed enough. When you compile your *own* document that uses \texttt{\string\usepackage\{somepackage\}} in its preamble, the \texttt{.log} file from *that* compilation is the definitive source for diagnosing issues. Look for errors like \texttt{! LaTeX Error: File \`...' not found.} or any other warnings/errors that appear after a package is loaded.
+    \item Some packages might exist but have external dependencies (e.g., `minted` needs Python/Pygments, `svg` needs Inkscape) or require specific compilation workflows (e.g., `pstricks` often needs `latex -> dvips -> ps2pdf`). This check only verifies the LaTeX \texttt{.sty} file existence.
+\end{itemize}
+
+\textbf{Installing Missing Packages:}
+\begin{itemize}
+    \item \textbf{TeX Live:} Use the `tlmgr` command-line tool. Example: \\ \verb|tlmgr update --self && tlmgr install <packagename>|
+    \item \textbf{MiKTeX:} Use the MiKTeX Console (GUI) or the `mpm` command-line tool. Often, MiKTeX can install missing packages automatically on-the-fly if configured to do so.
+\end{itemize}
+\vspace{2ex}
+\hrulefill
+
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Package File Existence Checks - Grouped by Category
+% ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+% Using the corrected macro \CheckPackageFile
+
+\section*{Core \& Essential Packages}
+\CheckPackageFile{amsmath}       % AMS mathematical facilities
+\CheckPackageFile{amssymb}       % AMS mathematical symbols
+\CheckPackageFile{amsfonts}      % AMS math fonts
+\CheckPackageFile{graphicx}      % Including graphics
+\CheckPackageFile{xcolor}        % Color support (should be found, loaded above)
+\CheckPackageFile{geometry}      % Page layout (should be found, loaded above)
+\CheckPackageFile{hyperref}      % Hyperlinks (should be found, loaded above)
+\CheckPackageFile{babel}         % Multilingual support (try loading with english option)
+\CheckPackageFile{ifthen}        % Basic conditional commands
+\CheckPackageFile{calc}          % Calculations in LaTeX commands
+
+\section*{Mathematics \& Symbols}
+\CheckPackageFile{amsthm}        % Theorem environments
+\CheckPackageFile{mathtools}     % Extensions to amsmath
+\CheckPackageFile{bm}            % Bold math symbols
+\CheckPackageFile{siunitx}       % SI units formatting
+\CheckPackageFile{physics}       % Macros for physics notation
+\CheckPackageFile{cancel}        % Strike-through math terms
+\CheckPackageFile{diffcoeff}     % Advanced derivatives
+
+\section*{Graphics \& Drawing}
+\CheckPackageFile{tikz}          % Powerful drawing language (PGF)
+\CheckPackageFile{pgfplots}      % Plotting library based on TikZ
+\CheckPackageFile{pst-plot}      % Plotting part of PSTricks (often needs latex->dvips->ps2pdf)
+\CheckPackageFile{pstricks}      % PSTricks core (often needs latex->dvips->ps2pdf)
+\CheckPackageFile{epstopdf}      % Convert EPS to PDF on the fly (for pdflatex)
+\CheckPackageFile{svg}           % Include SVG graphics (needs Inkscape usually)
+
+\section*{Tables}
+\CheckPackageFile{booktabs}      % High-quality table rules
+\CheckPackageFile{longtable}     % Tables spanning multiple pages
+\CheckPackageFile{array}         % Enhanced array and tabular environments
+\CheckPackageFile{multirow}      % Spanning rows in tables
+\CheckPackageFile{tabularx}      % Tables with adjustable-width columns
+\CheckPackageFile{colortbl}      % Colored tables
+\CheckPackageFile{tabu}          % Advanced table environments (sometimes fragile)
+\CheckPackageFile{makecell}      % Multi-line cells in tables
+
+\section*{Fonts \& Encodings}
+% These are fundamental, often part of base install
+\CheckPackageFile{fontenc}       % T1 encoding (should be found, loaded above)
+\CheckPackageFile{inputenc}      % UTF-8 input (should be found, loaded above)
+\CheckPackageFile{lmodern}       % Latin Modern (should be found, loaded above)
+\CheckPackageFile{textcomp}      % Text Companion symbols (should be found, loaded above)
+% Specific font packages
+\CheckPackageFile{mathpazo}      % Palatino math fonts
+\CheckPackageFile{helvet}        % Helvetica clone font
+\CheckPackageFile{courier}       % Courier clone font
+\CheckPackageFile{mathptmx}      % Times font for text and math
+\CheckPackageFile{fontspec}      % Font selection for XeLaTeX/LuaLaTeX (may show as found, but only works with those engines)
+\CheckPackageFile{unicode-math}  % Unicode math for XeLaTeX/LuaLaTeX (may show as found, but only works with those engines)
+
+\section*{Bibliography}
+\CheckPackageFile{natbib}        % Flexible bibliography citations
+\CheckPackageFile{biblatex}      % Modern bibliography management (requires Biber/BibTeX backend)
+    \makeatletter % Check if biblatex file exists to mention backend
+    \IfFileExists{biblatex.sty}{% Use IfFileExists here too
+        \par\hspace*{2em}\textcolor{blue!70!black}{\textit{Note: \texttt{biblatex.sty} found. Remember it requires a backend (Biber recommended or BibTeX) configured in your build process.}}
+    }{}
+    \makeatother
+
+\section*{Code Listings \& Verbatim}
+\CheckPackageFile{listings}      % Source code formatting
+\CheckPackageFile{minted}        % Advanced source code formatting (requires Python Pygments + shell escape)
+    \makeatletter
+    \IfFileExists{minted.sty}{% Use IfFileExists here too
+        \par\hspace*{2em}\textcolor{blue!70!black}{\textit{Note: \texttt{minted.sty} found. Remember it requires Python, Pygments, and the \texttt{-shell-escape} compilation flag to function.}}
+    }{}
+    \makeatother
+\CheckPackageFile{fancyvrb}      % Sophisticated verbatim environments
+
+\section*{Layout \& Formatting}
+\CheckPackageFile{enumitem}      % Control list environments
+\CheckPackageFile{setspace}      % Adjust line spacing
+\CheckPackageFile{fancyhdr}      % Customize page headers/footers
+\CheckPackageFile{titlesec}      % Control section headings
+\CheckPackageFile{tocloft}       % Control ToC, LoF, LoT appearance (should be found, loaded above)
+\CheckPackageFile{paralist}      % Compact lists and other enhancements
+\CheckPackageFile{lettrine}      % Dropped capitals
+\CheckPackageFile{microtype}     % Improves typography (subtle adjustments)
+\CheckPackageFile{soul}          % Hyphenation, underlining, strikeouts, etc.
+
+\section*{References \& Citations}
+\CheckPackageFile{cleveref}      % Intelligent cross-references (\cref)
+\CheckPackageFile{varioref}      % References like "on the facing page"
+\CheckPackageFile{xr}            % External document references
+
+\section*{Advanced \& Miscellaneous}
+\CheckPackageFile{datatool}      % Data manipulation and plotting
+\CheckPackageFile{xparse}        % Advanced macro definition interface (part of LaTeX3)
+\CheckPackageFile{expl3}         % LaTeX3 programming layer kernel (part of LaTeX3)
+\CheckPackageFile{pdfpages}      % Include pages from external PDF documents
+\CheckPackageFile{standalone}    % Compile sub-files independently or as part of main doc
+\CheckPackageFile{float}         % Improved float control (e.g., [H] specifier)
+\CheckPackageFile{caption}       % Customize captions
+\CheckPackageFile{subcaption}    % Sub-figures and sub-tables
+\CheckPackageFile{transparent}   % Transparency effects
+\CheckPackageFile{todonotes}     % Margin notes for todos
+
+\vspace{3ex}
+\hrulefill
+\section*{Check Complete}
+
+Review the messages above.
+\begin{itemize}
+    \item If a package file is marked \textcolor{red}{[File Not Found]}, you need to install it using your TeX distribution's package manager (\texttt{tlmgr} for TeX Live, MiKTeX Console for MiKTeX).
+    \item If a package file is marked \textcolor{green!70!black}{[File Found]}, it is likely installed. \textbf{However, you MUST verify it loads correctly by adding \texttt{\string\usepackage\{packagename\}} to the preamble of your actual document and checking the \texttt{.log} file from that compilation for any errors or warnings related to that package.}
+\end{itemize}
+
+\end{document}
